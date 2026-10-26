@@ -476,3 +476,21 @@
     transition-delay: 0ms;
   }
 }
+
+/* 아임웹 링크 hover 색보다 신규 버튼의 대비를 우선한다.
+   페이지 래퍼 안의 명시적인 버튼 종류만 대상으로 한다. */
+.wg-page :is(.button-primary, .wg-mc-button--primary, .wg-product-buy-button, .stb_form_submit_button):is(:link, :visited, :hover, :focus, :focus-visible, :active) {
+  color: #fffcf7 !important;
+}
+.wg-page :is(.button-outline, .wg-mc-button--text):is(:hover, :focus-visible) {
+  color: var(--color-primary) !important;
+}
+.wg-page.wg-main .hero .button-outline:is(:hover, :focus-visible),
+.wg-page.wg-masterclass .wg-mc-hero .wg-mc-button--text:is(:hover, :focus-visible) {
+  color: #fffcf7 !important;
+}
+.wg-page :is(.button, .wg-mc-button, .wg-product-buy-button, .stb_form_submit_button):is(:hover, :focus-visible) :is(.arrow, svg) {
+  color: inherit;
+}
+
+.wg-page .final-button:is(:hover, :focus-visible) { color:var(--color-primary-dark) !important; }
