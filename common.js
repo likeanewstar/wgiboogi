@@ -2,7 +2,8 @@
   "use strict";
 
   var page = document.querySelector(".wg-page");
-  if (!page) return;
+  if (!page || page.dataset.wgCommonBound) return;
+  page.dataset.wgCommonBound = "1";
 
   function setupReveals() {
     var items = page.querySelectorAll("[data-reveal]");
